@@ -1,0 +1,105 @@
+.header {
+    background-color: $main-bg;
+    color: $white-text;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .header__left {
+        display: flex;
+        align-items: center;
+
+        .header__logo {
+            padding-right: 1.5em;
+            border-right: 1px solid $white-text;
+    
+            .mustang-logo {
+                text-transform: uppercase;
+
+                &__title {
+                    font-size: 1.5rem;
+                }
+                &__text {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+        .header__title {
+            font-size: 2rem;
+            padding-left: 1em;
+        }
+    }
+    .header__right {
+        display: flex;
+
+        div {
+            padding: 0 1em;
+            border-left: 1px solid $white-text;
+        }
+
+        .header__info {
+            position: relative;
+            color: $main-text;
+            
+            &-svg {
+                fill: #fff;
+            }
+            &-content {
+                display: none;
+                position: absolute;
+                width: 500px;
+                background-color: $bg;
+                box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                padding: 1em;
+                border-radius: 5px;
+                top: 3em;
+                right: 1.5em;
+                z-index: 5;
+
+                &::before {
+                    content: '';
+                    border: 1em solid transparent;
+                    border-right: 1em solid $bg;
+                    border-bottom: 1em solid $bg;
+                    position: absolute;
+                    top: -1.25em;
+                    right: 0;
+                }
+
+                .header__info-img {
+                    height: 5em;
+                }
+
+                .header__info-trainer {
+                    font-size: 1.29rem;
+                    font-weight: bold;
+
+                    &_name {
+                        color: #2ec0d1;
+                    }
+                }
+                .header__info-contact {
+                    margin: 2em;
+
+                    a {
+                        display: block;
+                        padding: 0.5em 0;
+                    }
+                }
+            }
+            &-content:hover {
+                display: flex;
+            }
+        }
+
+        .header__menu-svg {
+            fill: #fff;
+        }
+
+        .header__login {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

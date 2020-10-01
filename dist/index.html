@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <section class="header__left">
+            <a href="#" class="header__logo">
+                
+                <div class="mustang-logo">
+                    <div class="mustang-logo__title">Мустанг</div>
+                    <div class="mustang-logo__text">Технологии кормления</div>
+                </div>
+            </a>
+            <h1 class="header__title">
+                Клиентский кабинет
+            </h1>
+        </section>
+        <section class="header__right">
+            <div class="header__info">
+                <svg class="header__info-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M13 18a9.916 9.916 0 01-4.3-1.14 16.939 16.939 0 01-4.372-3.2A15.281 15.281 0 01.3 7.093C-.311 4.824.018 2.909 1.226 1.7c.45-.458.6-.607 1.044-1.045A2.4 2.4 0 013.955 0 2.322 2.322 0 015.6.657a28.656 28.656 0 012.481 3.172c.468.519.432 1.15-.106 1.875a4.877 4.877 0 01-.392.458c-.076.081-.137.142-.252.257l-.69.69a6.11 6.11 0 001.724 2.523 6.756 6.756 0 002.49 1.734.044.044 0 00.031-.009l.69-.69a5.178 5.178 0 01.857-.745 1.73 1.73 0 01.938-.323 1.163 1.163 0 01.791.316 26.792 26.792 0 013.181 2.485 2.43 2.43 0 01.006 3.313c-.279.295-.633.649-1.052 1.052A4.527 4.527 0 0113 18zM3.946 1.8a.621.621 0 00-.414.135c-.438.431-.582.576-1.029 1.03-.789.789-.921 2.252-.364 4.013a13.917 13.917 0 003.467 5.41c2.31 2.312 5.21 3.812 7.386 3.812a2.816 2.816 0 002.044-.713c.41-.4.749-.734 1.006-1.006a.641.641 0 000-.828 25.232 25.232 0 00-2.742-2.14 6.061 6.061 0 00-.455.426l-.689.69a1.683 1.683 0 01-1.232.5c-1.037 0-2.4-.791-3.833-2.229a8.728 8.728 0 01-2.012-2.8 1.97 1.97 0 01.29-2.262l.689-.689c.108-.108.16-.161.222-.225.088-.093.153-.167.2-.231a27.1 27.1 0 00-2.141-2.756.56.56 0 00-.393-.137z" transform="translate(.001)"/>
+                </svg>
+                <div class="header__info-content">
+                    <img class="header__info-img" src="img/avatar-info.png" alt="avatar">
+                    <section>
+                        <div class="header__info-trainer">
+                                Ваш персональный менеджер<br>
+                            <span class="header__info-trainer_name">Фисенко Олеся!</span>
+                        </div>
+                        <section class="header__info-contact">
+                            <a href="mailto:fisenko@mustangtk.ru">fisenko@mustangtk.ru</a>
+                            <a href="tel:+79811049143">8 (981) 104-91-43</a>
+                        </section>
+                </section>
+                    
+                </div>
+            </div>
+            <div class="header__menu">
+                <svg class="header__menu-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="18"
+                viewBox="0 0 384.97 384.97" style="enable-background:new 0 0 384.97 384.97;" xml:space="preserve">
+                    <g>
+                        <path d="M12.03,120.303h360.909c6.641,0,12.03-5.39,12.03-12.03c0-6.641-5.39-12.03-12.03-12.03H12.03
+                            c-6.641,0-12.03,5.39-12.03,12.03C0,114.913,5.39,120.303,12.03,120.303z"/>
+                        <path d="M372.939,180.455H12.03c-6.641,0-12.03,5.39-12.03,12.03s5.39,12.03,12.03,12.03h360.909c6.641,0,12.03-5.39,12.03-12.03
+                            S379.58,180.455,372.939,180.455z"/>
+                        <path d="M372.939,264.667H132.333c-6.641,0-12.03,5.39-12.03,12.03c0,6.641,5.39,12.03,12.03,12.03h240.606
+                            c6.641,0,12.03-5.39,12.03-12.03C384.97,270.056,379.58,264.667,372.939,264.667z"/>
+                    </g>
+                </svg>   
+            </div>
+            <div class="header__login">
+                <a href="#">Мария Кулакова</a>
+        
+            </div>
+        </section>
+    </header>
+
+    <main class="catalog">
+        <div class="catalog__main">
+            
+            <nav class="catalog__navigation">
+                <ul>
+                    <li class="catalog__navigation-category" data-category="compoundfeed"><span></span>Комбикорм</li>
+                    <li class="catalog__navigation-category" data-category="concentrates"><span></span>Концентраты</li>
+                    <li class="catalog__navigation-category" data-category="premixes"><span></span>Премиксы</li>
+                    <li class="catalog__navigation-category" data-category="specialproducts"><span></span>Специальные продукты</li>
+                    <li class="catalog__navigation-category" data-category="zcm"><span></span>ЗЦМ</li>
+                    <li class="catalog__navigation-category" data-category="bmvd"><span></span>БМВД</li>
+                    <li class="catalog__navigation-category" data-category="feedadditives"><span></span>Кормовые добавки</li>
+                    <li class="catalog__navigation-category" data-category="vmks"><span></span>ВМКС</li>
+                </ul>
+            </nav>
+            <div class="catalog__content">
+                <form class="catalog__content-radio">
+                    <input type="radio" name="catalog" value="personal" id="personal-catalog" data-btn="switch" checked>
+                    <label for="personal-catalog">Персональный каталог</label>
+                    <span></span>
+                    <input type="radio" name="catalog" value="main" id="main-catalog" data-btn="switch">
+                    <label for="main-catalog">Общий каталог</label>
+                </form>
+                <div class="catalog__products">
+                    <div class="catalog__product-catalog" data-catalog="personal">
+                        <div class="catalog__products-category" data-category="compoundfeed">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/92e3fd3b4489c59e801d8241f6da1a15.png" alt="Актифат"></div>
+                                    <h3 class="catalog__products-title">Актифат</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/0d02d610eb12bcf6905e4a3d1c6b48c2.png" alt="Кауфит комплит"></div>
+                                    <h3 class="catalog__products-title">Кауфит комплит</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="concentrates">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 60</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="premixes">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="specialproducts">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/92e3fd3b4489c59e801d8241f6da1a15.png" alt="Актифат"></div>
+                                    <h3 class="catalog__products-title">Актифат1</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/0d02d610eb12bcf6905e4a3d1c6b48c2.png" alt="Кауфит комплит"></div>
+                                    <h3 class="catalog__products-title">Кауфит комплит1</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 601</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="zcm">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="bmvd">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 603</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="feedadditives">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй3</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт3</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="vmks">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш4</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="catalog__product-catalog" data-catalog="main">
+                        <div class="catalog__products-category" data-category="compoundfeed">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/0d02d610eb12bcf6905e4a3d1c6b48c2.png" alt="Кауфит комплит"></div>
+                                    <h3 class="catalog__products-title">Кауфит комплит</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/92e3fd3b4489c59e801d8241f6da1a15.png" alt="Актифат"></div>
+                                    <h3 class="catalog__products-title">Актифат</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 6</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="concentrates">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 60</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="premixes">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="specialproducts">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/92e3fd3b4489c59e801d8241f6da1a15.png" alt="Актифат"></div>
+                                    <h3 class="catalog__products-title">Актифат1</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/0d02d610eb12bcf6905e4a3d1c6b48c2.png" alt="Кауфит комплит"></div>
+                                    <h3 class="catalog__products-title">Кауфит комплит1</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 601</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="zcm">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="bmvd">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш2</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/5716f42589826d7662e86a529efb2112.png" alt="Кауфит 60"></div>
+                                    <h3 class="catalog__products-title">Кауфит 603</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="feedadditives">
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/78c2c421fb9fb46ff70117a93956fb4e.png" alt="Кауфит драй"></div>
+                                    <h3 class="catalog__products-title">Кауфит драй3</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                            <div class="catalog__products-item" data-container="bag">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/648fb10cacdd8e0dd9c617560fc17486.png" alt="Каустарт"></div>
+                                    <h3 class="catalog__products-title">Каустарт3</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                        <div class="catalog__products-category" data-category="vmks">
+                            <div class="catalog__products-item" data-container="bucket">
+                                <div class="catalog__products-content">
+                                    <div class="catalog__products-image"><img src="https://www.mustangtk.ru/images/original/625a702b464d155bbdcf0dd932b97a73.png" alt="Кауфрэш"></div>
+                                    <h3 class="catalog__products-title">Кауфрэш4</h3>
+                                    <div class="products-weight">
+                                        <button class="products-weight__down">-</button>
+                                        <p><span class="products-weight__number">30</span> кг</p>
+                                        <button class="products-weight__up">+</button>
+                                    </div>
+                                    <a href="#" class="catalog__products-info">
+                                        <svg class="catalog__products-info__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 245.334 245.334" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 245.334 245.334">
+                                            <g>
+                                                <path d="M122.667,0C55.028,0,0,55.028,0,122.667s55.027,122.667,122.666,122.667s122.667-55.028,122.667-122.667   S190.305,0,122.667,0z M122.667,215.334C71.57,215.334,30,173.764,30,122.667S71.57,30,122.667,30s92.667,41.57,92.667,92.667   S173.763,215.334,122.667,215.334z"/>
+                                                <rect width="30" x="107.667" y="109.167" height="79"/>
+                                                <rect width="30" x="107.667" y="57.167" height="29"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <input class="catalog__products-button" type="submit" value="Добавить в заказ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="catalog__aside">
+            <div class="catalog__aside-title">
+                Ваш заказ
+            </div>
+            <div class="catalog__aside-products">
+                <ul class="catalog__aside-category">
+                    <li data-category="compoundfeed">
+                        <h4 class="catalog__aside-category_title">Комбикорм</h4>
+                    </li>
+                    <li data-category="concentrates">
+                        <h4 class="catalog__aside-category_title">Концентраты</h4>
+                    </li>
+                    <li data-category="premixes">
+                        <h4 class="catalog__aside-category_title">Премиксы</h4>
+                    </li>
+                    <li data-category="specialproducts">
+                        <h4 class="catalog__aside-category_title">Специальные продукты</h4>
+                    </li>
+                    <li data-category="zcm">
+                        <h4 class="catalog__aside-category_title">ЗЦМ</h4>
+                    </li>
+                    <li data-category="bmvd">
+                        <h4 class="catalog__aside-category_title">БМВД</h4>
+                    </li>
+                    <li data-category="feedadditives">
+                        <h4 class="catalog__aside-category_title">Кормовые добавки</h4>
+                    </li>
+                    <li data-category="vmks">
+                        <h4 class="catalog__aside-category_title">ВМКС</h4>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
