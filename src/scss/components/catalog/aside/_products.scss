@@ -24,6 +24,10 @@
             .basket-product__btn {
                 position: relative;
 
+                &:hover .basket-product__btn-content{
+                    display: block;
+                }
+
                 .basket-product__btn-item {
                     border-radius: 50%;
                     border: 3px solid #e5e5e5;

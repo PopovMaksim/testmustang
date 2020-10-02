@@ -61,13 +61,26 @@ function showInfo() {
 function changeWeight(elem) {
     const weightNumber = elem.parentNode.querySelector('.products-weight__number');
 
+    function searchParent(e) {
+        e = e.parentNode;
+        if (e.getAttribute('data-container')) return e;
+        else return searchParent(e);
+    }
     function upWeight() {
-        weightNumber.textContent = Number(weightNumber.textContent) + 5;
+        weightNumber.textContent = Number(weightNumber.textContent) + weight;
     }
     function downWeight() {
         if (Number(weightNumber.textContent) > 5) {
-            weightNumber.textContent = Number(weightNumber.textContent) - 5;
+            weightNumber.textContent = Number(weightNumber.textContent) - weight;
         } 
+    }
+
+    let weightContainer = searchParent(elem);
+    let weight;
+    if (weightContainer.getAttribute('data-container') === 'bag') {
+        weight = 25;
+    } else if (weightContainer.getAttribute('data-container') === 'bucket') {
+        weight = 1;
     }
 
     if (elem.classList.value === 'products-weight__up') upWeight();
@@ -87,51 +100,6 @@ function clickChangeWeight() {
         });
     });
 }
-
-
-// function changeWeight() {
-//     const list = document.querySelector('.catalog');
-//     let switchWeigth;
-
-//     list.addEventListener('click', (e) => {
-//         switchWeigth = list.querySelectorAll('.products-weight button');
-//         switchWeigth.forEach((btn) => {
-//             if (e.target === btn) {
-//                 const weight = e.target.parentNode;
-//                 const weightUp = weight.querySelector('.products-weight__up');
-//                 const weightDown = weight.querySelector('.products-weight__down');
-//                 const weightNumber = weight.querySelector('.products-weight__number');
-        
-//                 weightUp.addEventListener('click', () => {
-//                     weightNumber.textContent = Number(weightNumber.textContent) + 5;
-//                 }, false);
-//                 weightDown.addEventListener('click', () => {
-//                     if (Number(weightNumber.textContent) > 5) {
-//                         weightNumber.textContent = Number(weightNumber.textContent) - 5;
-//                     } 
-//                 });
-
-//                 // weigth.forEach( elem => {
-//                 //     const weightUp = elem.querySelector('.products-weight__up');
-//                 //     const weightDown = elem.querySelector('.products-weight__down');
-//                 //     const weightNumber = elem.querySelector('.products-weight__number');
-            
-//                 //     weightUp.addEventListener('click', () => {
-//                 //         weightNumber.textContent = Number(weightNumber.textContent) + 5;
-//                 //     }, false);
-//                 //     weightDown.addEventListener('click', () => {
-//                 //         if (Number(weightNumber.textContent) > 5) {
-//                 //             weightNumber.textContent = Number(weightNumber.textContent) - 5;
-//                 //         } 
-//                 //     });
-//                 // });
-
-//             }
-//         })
-//     });
-
-    
-// }
 
 function addProduct() {
     const btnProducts = document.querySelectorAll('.catalog__products-button');
@@ -165,23 +133,30 @@ function addProduct() {
 
             let element = document.createElement('div');
             element.classList.add('basket-product');
-
+            
             let footerProduct = document.querySelector('.products-weight').cloneNode(true);
             footerProduct.querySelector('.products-weight__number').textContent = weight;
-            let container = '0';
+            let container = {};
+
             if (product.getAttribute('data-container') === 'bag') {
-                container = 'Мешки 25 кг';
+                container = {
+                    string: 'Мешки 25 кг',
+                    attribute: 'bag'
+                }
             } else if (product.getAttribute('data-container') === 'bucket') {
-                container = 'Ведра по 1 и 5 кг';
+                container = {
+                    string: 'Ведра по 1 и 5 кг',
+                    attribute: 'bucket'
+                }
             }
+            element.setAttribute('data-container', container.attribute);
+
             const divProduct = `<div class="basket-product__heading">
                                     <h6>${nameProduct}</h6>
                                     <div class="basket-product__right">
-                                        <div class="basket-product__container">${container}</div>
+                                        <div class="basket-product__container">${container.string}</div>
                                         <div class="basket-product__btn">
-                                            <span class="basket-product__btn-item"></span>
-                                            <span class="basket-product__btn-item"></span>
-                                            <span class="basket-product__btn-item"></span>
+                                            <span class="basket-product__btn-item"></span><span class="basket-product__btn-item"></span><span class="basket-product__btn-item"></span>
                                             <div class="basket-product__btn-content">
                                                 <div class="basket-product__background">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="193" height="103" viewBox="0 0 193 102.603">
@@ -225,23 +200,11 @@ function addProduct() {
 
             function addBtnArrange() {
                 const aside = document.querySelector('.catalog__aside');
-                const btnArrange = document.createElement('input');
-                btnArrange.classList.add('catalog__aside-arrange');
-                btnArrange.setAttribute('type', 'submit');
-                btnArrange.setAttribute('value', 'Оформить');
-                aside.appendChild(btnArrange);
-            }
-            
-            function menuProduct() {
-                const btnMenu = document.querySelectorAll('.basket-product__btn');
-                btnMenu.forEach((elem) => {
-                    elem.addEventListener('mouseover', function() {
-                        this.querySelector('.basket-product__btn-content').style.display = 'block';
-                    });
-                    elem.addEventListener('mouseout', function() {
-                        this.querySelector('.basket-product__btn-content').style.display = '';
-                    })
-                });
+                const formArrange = document.createElement('form');
+                formArrange.setAttribute('action', '#');
+                let btn = `<input class="catalog__aside-arrange" type="submit" value="Оформить">`;
+                formArrange.innerHTML = btn;
+                aside.appendChild(formArrange);
             }
 
             function deleteProduct() {
@@ -278,19 +241,9 @@ function addProduct() {
                 addBtnArrange();
             }
             
-            menuProduct(); 
             deleteProduct();      
         });
     })
-}
-
-function menuProduct() {
-    const btnMenu = document.querySelector('.basket-product__btn');
-    btnMenu.forEach((elem) => {
-        elem.addEventListener('click', ()=> {
-            elem.querySelector('.basket-product__btn-content').style.display = 'block';
-        });
-    });
 }
 
 function switchCatalog() {

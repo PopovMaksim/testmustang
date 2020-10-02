@@ -109,12 +109,12 @@ body button {
   display: none;
   position: absolute;
   width: 432px;
-  height: 200px;
+  height: 175px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   padding: 1.35em;
   border-radius: 5px;
-  top: 4em;
+  top: 4.3em;
   right: 3em;
   z-index: 5;
 }
@@ -423,6 +423,10 @@ body button {
 
 .basket-product .basket-product__heading .basket-product__right .basket-product__btn {
   position: relative;
+}
+
+.basket-product .basket-product__heading .basket-product__right .basket-product__btn:hover .basket-product__btn-content {
+  display: block;
 }
 
 .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-item {
