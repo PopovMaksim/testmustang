@@ -4,10 +4,12 @@
     margin: 1.8em 0 1.8em 1.7em;
     display: flex;
     width: 68%; 
+    position: relative;
     
     .catalog__content {
         overflow: auto;
         width: 90%;
+        position: relative;
     
         .catalog__content-radio {
             display: inline-block;

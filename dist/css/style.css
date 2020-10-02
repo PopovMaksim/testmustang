@@ -6,10 +6,6 @@
   width: 1em;
 }
 
-::-webkit-scrollbar-track {
-  border-left: 1px solid #e5e5e5;
-}
-
 ::-webkit-scrollbar-thumb {
   border-radius: 7px;
   border: 2px solid #fff;
@@ -41,6 +37,15 @@ body li {
 body input,
 body button {
   outline: none;
+}
+
+body .scrollBar-line {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e5e5e5;
 }
 
 .products-weight {
@@ -569,11 +574,13 @@ body button {
   margin: 1.8em 0 1.8em 1.7em;
   display: flex;
   width: 68%;
+  position: relative;
 }
 
 .catalog__main .catalog__content {
   overflow: auto;
   width: 90%;
+  position: relative;
 }
 
 .catalog__main .catalog__content .catalog__content-radio {

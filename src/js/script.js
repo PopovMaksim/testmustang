@@ -101,12 +101,22 @@ function clickChangeWeight() {
     });
 }
 
+function showScrollBar() {
+    const aside = document.querySelector('.catalog__aside');
+    if (aside.scrollHeight >= aside.offsetHeight) {
+        const line = document.createElement('div');
+        line.classList.add('scrollBar-line');
+        aside.appendChild(line);
+    }
+}
+
 function addProduct() {
     const btnProducts = document.querySelectorAll('.catalog__products-button');
     const basketProducts = document.querySelector('.catalog__aside-products');
 
     btnProducts.forEach(elem => {
         elem.addEventListener('click', function() {
+            showScrollBar();
             const product = elem.parentNode;
             const categoryProduct = product.parentNode.getAttribute('data-category');
             const weight = product.querySelector('.products-weight__number').textContent;
@@ -243,7 +253,7 @@ function addProduct() {
             
             deleteProduct();      
         });
-    })
+    });
 }
 
 function switchCatalog() {
