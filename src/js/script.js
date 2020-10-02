@@ -1,5 +1,6 @@
 function scrollLink() {
     const catalog = document.querySelector('.catalog__content');
+    //const catalog = document.querySelectorAll('.catalog__content'); и сделать через forEach все дальнейшие действия
     const catalogHeight = catalog.offsetTop;
     const linkCategory = document.querySelectorAll('.catalog__navigation-category');
 

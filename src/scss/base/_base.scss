@@ -9,14 +9,14 @@
     border: 2px solid #fff;
     background-color: #e5e5e5;
 }
-
+:root {
+    font-size: 14px;
+}
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
     color: $main-text;
     padding: 0;
     margin: 0;
-    opacity: 0.6;
 
     scrollbar-color: #e5e5e5 #fff;
     scrollbar-width: thin;
@@ -32,21 +32,28 @@ body {
     li {
         list-style: none;
     }
+    input,
+    button {
+        outline: none;
+    }
 
     .products-weight {
         display: flex;
         justify-content: space-around;
         align-items: center;
         
-        button {
-            line-height: 0em;
-            font-size: 1.5rem;
-            height: 1em;
+        .products-weight__up,
+        .products-weight__down {
             background-color: $bg;
             border-radius: 4px;
             border: solid 1px $main-bg;
             color: $main-bg;
             cursor: pointer;
+            padding: 5px;
+            line-height: 0;
+        }
+        p {
+            margin: 0;
         }
     }
 }

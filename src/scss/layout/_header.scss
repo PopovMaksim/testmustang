@@ -2,8 +2,9 @@
     background-color: $main-bg;
     color: $white-text;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 4.5em;
 
     .header__left {
         display: flex;
@@ -27,13 +28,14 @@
         .header__title {
             font-size: 2rem;
             padding-left: 1em;
+            margin: 0.93em 0;
         }
     }
     .header__right {
         display: flex;
 
-        div {
-            padding: 0 1em;
+        &>div {
+            padding: 0 2.29em;
             border-left: 1px solid $white-text;
         }
 
@@ -47,13 +49,14 @@
             &-content {
                 display: none;
                 position: absolute;
-                width: 500px;
+                width: 432px;
+                height: 200px;
                 background-color: $bg;
                 box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-                padding: 1em;
+                padding: 1.35em;
                 border-radius: 5px;
-                top: 3em;
-                right: 1.5em;
+                top: 4em;
+                right: 3em;
                 z-index: 5;
 
                 &::before {
@@ -66,24 +69,57 @@
                     right: 0;
                 }
 
-                .header__info-img {
-                    height: 5em;
-                }
+                .header__info-avatar {
+                    position: relative;
+                    overflow: hidden;
+                    width: 94px;
+                    height: 70px;
 
+                    .header__info-img {
+                        width: 100%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                
+                &>section {
+                    padding-left: 1.7em;
+                }
                 .header__info-trainer {
                     font-size: 1.29rem;
-                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.44;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #506482;
 
-                    &_name {
+                    .header__info-trainer_name {
                         color: #2ec0d1;
                     }
                 }
                 .header__info-contact {
-                    margin: 2em;
+                    margin: 2em 0;
 
                     a {
                         display: block;
-                        padding: 0.5em 0;
+                        padding: 0.535em 0;
+                        transition: 0.3s;
+
+                        &:hover {
+                            color: $main-bg;
+
+                            .header__info-contact_icon {
+                                fill: $main-bg;
+                            }
+                        }
+                        .header__info-contact_icon {
+                            margin-right: 0.43em;
+                            fill: $main-text;
+                            transition: 0.3s;
+                        }
                     }
                 }
             }
