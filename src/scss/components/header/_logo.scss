@@ -1,0 +1,15 @@
+.header__logo {
+    padding-right: 1.5em;
+    border-right: 1px solid $white-text;
+
+    .mustang-logo {
+        text-transform: uppercase;
+
+        &__title {
+            font-size: 1.5rem;
+        }
+        &__text {
+            font-size: 0.5rem;
+        }
+    }
+}

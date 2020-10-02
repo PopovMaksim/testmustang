@@ -1,45 +1,46 @@
 function scrollLink() {
-    const catalog = document.querySelector('.catalog__content');
-    //const catalog = document.querySelectorAll('.catalog__content'); и сделать через forEach все дальнейшие действия
-    const catalogHeight = catalog.offsetTop;
-    const linkCategory = document.querySelectorAll('.catalog__navigation-category');
-
-    function deleteActiveLink() {
-        let activeLink = document.querySelector('.navigation-category_active');
-        if (activeLink) {
-            activeLink.classList.remove('navigation-category_active');
+    const catalog = document.querySelectorAll('.catalog__content');
+    catalog.forEach((catalogActive) => {
+        const catalogHeight = catalogActive.offsetTop;
+        const linkCategory = document.querySelectorAll('.catalog__navigation-category');
+    
+        function deleteActiveLink() {
+            let activeLink = document.querySelector('.navigation-category_active');
+            if (activeLink) {
+                activeLink.classList.remove('navigation-category_active');
+            }
         }
-    }
-
-    linkCategory.forEach( elem => {
-        elem.addEventListener('click', () => {
-            const category = elem.getAttribute('data-category');
-            const item = catalog.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;
-            
-            catalog.scrollTop = item - catalogHeight;
-            deleteActiveLink();
-            elem.classList.add("navigation-category_active");
+    
+        linkCategory.forEach( elem => {
+            elem.addEventListener('click', () => {
+                const category = elem.getAttribute('data-category');
+                const item = catalogActive.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;
+                
+                catalogActive.scrollTop = item - catalogHeight;
+                deleteActiveLink();
+                elem.classList.add("navigation-category_active");
+            });
         });
+    
+        function activeScroll() {  
+            const categorys = document.querySelectorAll('.catalog__products-category');
+            const categoryScroll = {};
+            categorys.forEach((elem, i) => {
+                categoryScroll[i] = elem.offsetTop - catalogHeight;
+            });
+            catalogActive.addEventListener('scroll', function() {
+                for (let key in categoryScroll) {
+                    if (catalogActive.scrollTop <= categoryScroll[key] + 100) {
+                        deleteActiveLink();
+                        linkCategory[key].classList.add("navigation-category_active");
+                        return;
+                    }
+                }           
+            });
+        };
+    
+        activeScroll();
     });
-
-    function activeScroll() {  
-        const categorys = document.querySelectorAll('.catalog__products-category');
-        const categoryScroll = {};
-        categorys.forEach((elem, i) => {
-            categoryScroll[i] = elem.offsetTop - catalogHeight;
-        });
-        catalog.addEventListener('scroll', function() {
-            for (let key in categoryScroll) {
-                if (catalog.scrollTop <= categoryScroll[key] + 100) {
-                    deleteActiveLink();
-                    linkCategory[key].classList.add("navigation-category_active");
-                    return;
-                }
-            }           
-        });
-    }
-
-    activeScroll();
 }
 
 function showInfo() {
@@ -218,37 +219,6 @@ function addProduct() {
                                 <div class="products-weight">
                                     ${footerProduct.innerHTML}
                                 </div>`;
-
-            // let headingProduct = document.createElement('div');
-            // headingProduct.classList.add('basket-product__heading');
-            // let elementTitle = document.createElement('h6');
-            // elementTitle.textContent = nameProduct;
-            // let footerProduct = document.querySelector('.products-weight').cloneNode(true);
-            // footerProduct.querySelector('.products-weight__number').textContent = weight;
-            // let elementBtn = document.createElement('div');
-            // elementBtn.classList.add('basket-product__btn');
-            // for(let i = 0; i < 3; i++){
-            //     elementBtn.appendChild(document.createElement('span'));
-            // }
-                        
-            // let elementContent = document.createElement('section');
-            // elementContent.classList.add('basket-product__btn-content');
-            // let elementLink = document.createElement('div');
-            // elementLink.classList.add('basket-product__btn-content_info');
-            // elementLink.textContent = 'Узнать о продукте';
-            // let elementDelete = document.createElement('div');
-            // elementDelete.classList.add('basket-product__btn-content_delete');
-            // elementDelete.textContent = 'Удалить продукт';
-            // elementContent.appendChild(elementLink);
-            // elementContent.appendChild(elementDelete);
-            // elementBtn.appendChild(elementContent);
-
-            // headingProduct.appendChild(elementTitle);
-            // headingProduct.appendChild(elementContainer);
-            // headingProduct.appendChild(elementBtn);
-            // element.appendChild(headingProduct);
-            // element.appendChild(footerProduct);
-
 
             element.innerHTML = divProduct;
             addedCategory.appendChild(element);

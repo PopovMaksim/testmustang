@@ -1,0 +1,27 @@
+.products-weight {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    .products-weight__up,
+    .products-weight__down {
+        background-color: $bg;
+        border-radius: 4px;
+        border: solid 1px $main-bg;
+        color: $main-bg;
+        cursor: pointer;
+        position: relative;
+        width: 24px;
+        height: 24px;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    p {
+        margin: 0;
+    }
+}

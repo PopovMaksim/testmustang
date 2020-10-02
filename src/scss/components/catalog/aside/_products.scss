@@ -1,0 +1,99 @@
+.basket-product {
+    border-radius: 8px;
+    background-color: rgba(229, 229, 229, 0.3);
+    margin-top: 0.75em;
+    margin-left: -1em;
+    padding: 0.75em 1.15em 0;
+
+    .basket-product__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h6 {
+            margin: 0;
+            font-size: 1rem;
+        }
+        .basket-product__right {
+            display: flex;
+
+            .basket-product__container {
+                font-size: 0.85rem;
+                margin-right: 2.27em;
+            }
+            .basket-product__btn {
+                position: relative;
+
+                .basket-product__btn-item {
+                    border-radius: 50%;
+                    border: 3px solid #e5e5e5;
+                    width: 0;
+                    height: 0;
+                    display: inline-block;
+                    margin: 0.15em;
+                }
+                .basket-product__btn-content {
+                    display: none;
+                    position: absolute;
+                    top: 1em;
+                    right: 0.5em;
+                    width: 177px;
+                    height: 85px;
+                    padding: 1.5em 8px;
+
+                    .basket-product__background {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 193px;
+                        height: 103px;
+                        z-index: 5;
+
+                        svg {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .basket-product__btn-content_info,
+                    .basket-product__btn-content_delete {
+                        display: flex;
+                        align-items: center;
+                        padding: 0.885em 0 0.885em 0.755em;
+                        font-size: 0.85rem;
+                        cursor: pointer;
+                        margin: 0 auto;
+                        position: relative;
+                        z-index: 6;
+                        transition: 0.3s;
+                        
+                        svg {
+                            margin-right: 0.755em;
+                        }
+
+                        &:hover {
+                            color: $main-bg;
+                        }
+                    }
+                    .basket-product__btn-content_border {
+                        display: block;
+                        width: 149px;
+                        height: 1px;
+                        margin: 0 auto;
+                        background-color:#e5e5e5;
+                        position: relative;
+                        z-index: 6;
+                    }
+                }
+            }
+        }
+    }
+    .products-weight {
+        justify-content: start;
+
+        p {
+            margin: 0.75em 1em;
+        }
+    }
+}
