@@ -2,6 +2,7 @@ function scrollLink() {
     const catalog = document.querySelectorAll('.catalog__content');
     catalog.forEach((catalogActive) => {
         const catalogHeight = catalogActive.offsetTop;
+        console.log(catalogHeight);
         const linkCategory = document.querySelectorAll('.catalog__navigation-category');
     
         function deleteActiveLink() {
@@ -94,8 +95,8 @@ function clickChangeWeight() {
     list.addEventListener('click', e => {
         switchWeigth = list.querySelectorAll('.products-weight button');
         switchWeigth.forEach( btn => {
-            if (e.target === btn) {
-                changeWeight(e.target);
+            if (e.target.closest('button') === btn) {
+                changeWeight(e.target.closest('button'));
             }
         });
     });
