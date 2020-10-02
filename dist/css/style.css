@@ -56,8 +56,17 @@ body .products-weight .products-weight__down {
   border: solid 1px #2ec0d1;
   color: #2ec0d1;
   cursor: pointer;
-  padding: 5px;
-  line-height: 0;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+body .products-weight .products-weight__up svg,
+body .products-weight .products-weight__down svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body .products-weight p {
@@ -354,6 +363,10 @@ body .products-weight p {
   width: 100%;
 }
 
+.catalog .catalog__content .catalog__products .catalog__products-category:last-child {
+  margin-bottom: 2em;
+}
+
 .catalog .catalog__content .catalog__products .catalog__products-item {
   width: calc(33.33% - 22px);
   margin: 3em 11px 0;
@@ -476,7 +489,7 @@ body .products-weight p {
   background-color: rgba(229, 229, 229, 0.3);
   margin-top: 0.75em;
   margin-left: -1em;
-  padding: 0.75em 1em 0;
+  padding: 0.75em 1.15em 0;
 }
 
 .catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading {
@@ -490,57 +503,85 @@ body .products-weight p {
   font-size: 1rem;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__container {
-  font-size: 0.85rem;
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right {
+  display: flex;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn {
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__container {
+  font-size: 0.85rem;
+  margin-right: 2.27em;
+}
+
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn {
   position: relative;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn span {
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-item {
   border-radius: 50%;
-  border: 4px solid #e5e5e5;
+  border: 3px solid #e5e5e5;
   width: 0;
   height: 0;
   display: inline-block;
   margin: 0.15em;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn .basket-product__btn-content {
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content {
   display: none;
   position: absolute;
-  top: 2em;
-  right: 1em;
-  width: 16em;
-  padding: 1em 0;
+  top: 1em;
+  right: 0.5em;
+  width: 177px;
+  height: 85px;
+  padding: 1.5em 8px;
+}
+
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 193px;
+  height: 103px;
   z-index: 5;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn .basket-product__btn-content::before {
-  content: '';
-  border: 1em solid transparent;
-  border-right: 1em solid #ffffff;
-  border-bottom: 1em solid #ffffff;
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__background svg {
   position: absolute;
-  top: -1.25em;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn .basket-product__btn-content div {
-  padding: 0.5em 0 0.5em 2.5em;
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_info,
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_delete {
+  display: flex;
+  align-items: center;
+  padding: 0.885em 0 0.885em 0.755em;
+  font-size: 0.85rem;
   cursor: pointer;
-  width: 60%;
   margin: 0 auto;
+  position: relative;
+  z-index: 6;
+  transition: 0.3s;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn .basket-product__btn-content .basket-product__btn-content_info {
-  background: url("../img/icon-info.png") no-repeat 10% 50%;
-  border-bottom: 1px solid #e5e5e5;
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_info svg,
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_delete svg {
+  margin-right: 0.755em;
 }
 
-.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__btn .basket-product__btn-content .basket-product__btn-content_delete {
-  background: url("../img/icon-delete.png") no-repeat 10% 50%;
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_info:hover,
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_delete:hover {
+  color: #2ec0d1;
+}
+
+.catalog .catalog__aside .catalog__aside-category li .basket-product .basket-product__heading .basket-product__right .basket-product__btn .basket-product__btn-content .basket-product__btn-content_border {
+  display: block;
+  width: 149px;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+  position: relative;
+  z-index: 6;
 }
 
 .catalog .catalog__aside .catalog__aside-category li .basket-product .products-weight {

@@ -150,7 +150,6 @@ function addProduct() {
             const addedProduct = basketProducts.querySelectorAll('.basket-product');
 
             let k;
-
             addedProduct.forEach((elem) => {
                 if (nameProduct === elem.querySelector('h6').textContent) {
                     let w = elem.querySelector('.products-weight__number').textContent;
@@ -165,41 +164,93 @@ function addProduct() {
 
             let element = document.createElement('div');
             element.classList.add('basket-product');
-            let headingProduct = document.createElement('div');
-            headingProduct.classList.add('basket-product__heading');
-            let elementTitle = document.createElement('h6');
-            elementTitle.textContent = nameProduct;
+
             let footerProduct = document.querySelector('.products-weight').cloneNode(true);
             footerProduct.querySelector('.products-weight__number').textContent = weight;
-            let elementContainer = document.createElement('div');
-            elementContainer.classList.add('basket-product__container');
+            let container = '0';
             if (product.getAttribute('data-container') === 'bag') {
-                elementContainer.textContent = 'Мешки 25 кг';
+                container = 'Мешки 25 кг';
             } else if (product.getAttribute('data-container') === 'bucket') {
-                elementContainer.textContent = 'Ведра по 1 и 5 кг';
+                container = 'Ведра по 1 и 5 кг';
             }
-            let elementBtn = document.createElement('div');
-            elementBtn.classList.add('basket-product__btn');
-            for(let i = 0; i < 3; i++){
-                elementBtn.appendChild(document.createElement('span'));
-            }
-            let elementContent = document.createElement('section');
-            elementContent.classList.add('basket-product__btn-content');
-            let elementLink = document.createElement('div');
-            elementLink.classList.add('basket-product__btn-content_info');
-            elementLink.textContent = 'Узнать о продукте';
-            let elementDelete = document.createElement('div');
-            elementDelete.classList.add('basket-product__btn-content_delete');
-            elementDelete.textContent = 'Удалить продукт';
-            elementContent.appendChild(elementLink);
-            elementContent.appendChild(elementDelete);
-            elementBtn.appendChild(elementContent);
+            const divProduct = `<div class="basket-product__heading">
+                                    <h6>${nameProduct}</h6>
+                                    <div class="basket-product__right">
+                                        <div class="basket-product__container">${container}</div>
+                                        <div class="basket-product__btn">
+                                            <span class="basket-product__btn-item"></span>
+                                            <span class="basket-product__btn-item"></span>
+                                            <span class="basket-product__btn-item"></span>
+                                            <div class="basket-product__btn-content">
+                                                <div class="basket-product__background">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="193" height="103" viewBox="0 0 193 102.603">
+                                                        <defs>
+                                                            <filter id="vvt9q0m26a" width="193" height="102.603" x="0" y="0" filterUnits="userSpaceOnUse">
+                                                                <feOffset dy="3"/>
+                                                                <feGaussianBlur result="blur" stdDeviation="3"/>
+                                                                <feFlood flood-opacity=".161"/>
+                                                                <feComposite in2="blur" operator="in"/>
+                                                                <feComposite in="SourceGraphic"/>
+                                                            </filter>
+                                                        </defs>
+                                                        <g filter="url(#vvt9q0m26a)">
+                                                            <path fill="#fff" d="M-4077-2087.4a8 8 0 0 1-8-8v-57a8 8 0 0 1 8-8h148.44l18.56-11.6v76.6a8 8 0 0 1-8 8z" transform="translate(4094 2178)"/>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="basket-product__btn-content_info">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+                                                        <path fill="#2ec0d1" d="M0 6.5A6.5 6.5 0 1 1 6.5 13 6.508 6.508 0 0 1 0 6.5zm1.625 0A4.875 4.875 0 1 0 6.5 1.625 4.881 4.881 0 0 0 1.625 6.5zM5.69 8.936v-3.25h1.625v3.25zm0-4.875a.813.813 0 1 1 .812.812.812.812 0 0 1-.814-.812z"/>
+                                                    </svg>
+                                                    Узнать о продукте
+                                                </div>
+                                                <span class="basket-product__btn-content_border"></span>
+                                                <div class="basket-product__btn-content_delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+                                                        <path fill="#2ec0d1" d="M8.125 11.916H2.709a1.093 1.093 0 0 1-.779-.324 1.007 1.007 0 0 1-.3-.715l-.5-6h-.047A1.084 1.084 0 0 1 0 3.792V2.709a1.085 1.085 0 0 1 1.083-1.084h1.626v-.542A1.084 1.084 0 0 1 3.792 0h3.25a1.085 1.085 0 0 1 1.083 1.083v.542H9.75a1.085 1.085 0 0 1 1.083 1.084v1.083A1.084 1.084 0 0 1 9.75 4.875h-.043l-.5 5.958a1.084 1.084 0 0 1-1.082 1.083zM2.214 4.875l.495 5.958h5.416v-.045l.492-5.913zM1.083 2.709v1.083H9.75V2.709H1.083zm2.709-1.626v.542h3.25v-.542z" transform="translate(1.083 .542)"/>
+                                                    </svg>
+                                                    Удалить продукт
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="products-weight">
+                                    ${footerProduct.innerHTML}
+                                </div>`;
 
-            headingProduct.appendChild(elementTitle);
-            headingProduct.appendChild(elementContainer);
-            headingProduct.appendChild(elementBtn);
-            element.appendChild(headingProduct);
-            element.appendChild(footerProduct);
+            // let headingProduct = document.createElement('div');
+            // headingProduct.classList.add('basket-product__heading');
+            // let elementTitle = document.createElement('h6');
+            // elementTitle.textContent = nameProduct;
+            // let footerProduct = document.querySelector('.products-weight').cloneNode(true);
+            // footerProduct.querySelector('.products-weight__number').textContent = weight;
+            // let elementBtn = document.createElement('div');
+            // elementBtn.classList.add('basket-product__btn');
+            // for(let i = 0; i < 3; i++){
+            //     elementBtn.appendChild(document.createElement('span'));
+            // }
+                        
+            // let elementContent = document.createElement('section');
+            // elementContent.classList.add('basket-product__btn-content');
+            // let elementLink = document.createElement('div');
+            // elementLink.classList.add('basket-product__btn-content_info');
+            // elementLink.textContent = 'Узнать о продукте';
+            // let elementDelete = document.createElement('div');
+            // elementDelete.classList.add('basket-product__btn-content_delete');
+            // elementDelete.textContent = 'Удалить продукт';
+            // elementContent.appendChild(elementLink);
+            // elementContent.appendChild(elementDelete);
+            // elementBtn.appendChild(elementContent);
+
+            // headingProduct.appendChild(elementTitle);
+            // headingProduct.appendChild(elementContainer);
+            // headingProduct.appendChild(elementBtn);
+            // element.appendChild(headingProduct);
+            // element.appendChild(footerProduct);
+
+
+            element.innerHTML = divProduct;
             addedCategory.appendChild(element);
 
             function addBtnArrange() {
