@@ -1,47 +1,48 @@
-function scrollLink() {
-    const catalog = document.querySelectorAll('.catalog__content');
-    catalog.forEach((catalogActive) => {
-        const catalogHeight = catalogActive.offsetTop;
-        console.log(catalogHeight);
-        const linkCategory = document.querySelectorAll('.catalog__navigation-category');
-    
-        function deleteActiveLink() {
-            let activeLink = document.querySelector('.navigation-category_active');
-            if (activeLink) {
-                activeLink.classList.remove('navigation-category_active');
+const catalog = document.querySelector('.catalog__content');            //общий каталог, с формой переключения и двумя каталогами
+const linkCategory = document.querySelectorAll('.catalog__navigation-category');    //пункты в навигации (li)
+
+function deleteActiveLink() {
+    let activeLink = document.querySelector('.navigation-category_active');
+    if (activeLink) {
+        activeLink.classList.remove('navigation-category_active');
+    }
+}
+
+function activeScroll() {  
+    const categorys = document.querySelectorAll('.catalog__products-category');     //категории товаров в каталоге
+    const categoryScroll = {};
+    categorys.forEach((elem, i) => {                                                //перебор каждой категории
+        categoryScroll[i] = elem.offsetTop;                                         //на какой высоте находится каждая категория
+    });
+    catalog.addEventListener('scroll', function() {                                 //срабатывает при пролистывании в каталоге товаров
+        for (let key in categoryScroll) {                                           //проходится по всему массиву с данными о высоте в категориях
+            if (catalog.scrollTop <= categoryScroll[key] + 100) {                   //catalog.scrollTop - то, на сколько прокручен каталог,
+                deleteActiveLink();                                                 //удаляем активную ссылку
+                linkCategory[key].classList.add("navigation-category_active");      //добавляем активацию
+                return;
             }
-        }
-    
-        linkCategory.forEach( elem => {
-            elem.addEventListener('click', () => {
-                const category = elem.getAttribute('data-category');
-                const item = catalogActive.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;
-                
-                catalogActive.scrollTop = item - catalogHeight;
-                deleteActiveLink();
-                elem.classList.add("navigation-category_active");
+        }           
+    });
+}
+
+function clickLink() {
+    linkCategory.forEach( link => {
+        link.addEventListener('click', () => {
+            const activeCategory = document.querySelectorAll('.catalog__product-catalog');
+            const category = link.getAttribute('data-category');
+
+            activeCategory.forEach( catalogActive => {
+                if (catalogActive.style.display === 'block') {
+                    const item = catalogActive.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;   //ищем нужную категорию
+                    
+                    catalog.scrollTop = item;
+                    deleteActiveLink();
+                    link.classList.add('navigation-catagory_active');
+                }
             });
         });
-    
-        function activeScroll() {  
-            const categorys = document.querySelectorAll('.catalog__products-category');
-            const categoryScroll = {};
-            categorys.forEach((elem, i) => {
-                categoryScroll[i] = elem.offsetTop - catalogHeight;
-            });
-            catalogActive.addEventListener('scroll', function() {
-                for (let key in categoryScroll) {
-                    if (catalogActive.scrollTop <= categoryScroll[key] + 100) {
-                        deleteActiveLink();
-                        linkCategory[key].classList.add("navigation-category_active");
-                        return;
-                    }
-                }           
-            });
-        };
-    
-        activeScroll();
     });
+    activeScroll();
 }
 
 function showInfo() {
@@ -281,7 +282,7 @@ function switchCatalog() {
 
 
 switchCatalog()
-scrollLink();
+clickLink();
 showInfo();
 addProduct();
 clickChangeWeight();
