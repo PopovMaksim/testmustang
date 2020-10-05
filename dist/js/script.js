@@ -72,8 +72,9 @@ function changeWeight(elem) {
         weightNumber.textContent = Number(weightNumber.textContent) + weight;
     }
     function downWeight() {
-        if (Number(weightNumber.textContent) > 5) {
-            weightNumber.textContent = Number(weightNumber.textContent) - weight;
+        let w = Number(weightNumber.textContent) - weight;
+        if (w >= 1) {
+            weightNumber.textContent = w;
         } 
     }
 
@@ -173,7 +174,7 @@ function addProduct() {
                                                 <div class="basket-product__background">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="193" height="103" viewBox="0 0 193 102.603">
                                                         <defs>
-                                                            <filter id="vvt9q0m26a" width="193" height="102.603" x="0" y="0" filterUnits="userSpaceOnUse">
+                                                            <filter id="${nameProduct}" width="193" height="102.603" x="0" y="0" filterUnits="userSpaceOnUse">
                                                                 <feOffset dy="3"/>
                                                                 <feGaussianBlur result="blur" stdDeviation="3"/>
                                                                 <feFlood flood-opacity=".161"/>
@@ -181,7 +182,7 @@ function addProduct() {
                                                                 <feComposite in="SourceGraphic"/>
                                                             </filter>
                                                         </defs>
-                                                        <g filter="url(#vvt9q0m26a)">
+                                                        <g filter="url(#${nameProduct})">
                                                             <path fill="#fff" d="M-4077-2087.4a8 8 0 0 1-8-8v-57a8 8 0 0 1 8-8h148.44l18.56-11.6v76.6a8 8 0 0 1-8 8z" transform="translate(4094 2178)"/>
                                                         </g>
                                                     </svg>
@@ -239,12 +240,13 @@ function addProduct() {
 
                 deleteBtn.forEach((elem, i) => {
                     elem.addEventListener('click', () => {
-                        deleteProduct[i].remove();
-
-                        deleteCategory();
-                        
-                        const el = document.querySelector('.basket-product');
-                        if (!el) deleteArrange();
+                        deleteProduct[i].style.opacity = '0';
+                        setTimeout(() => {
+                            deleteProduct[i].remove();
+                            deleteCategory();
+                            const el = document.querySelector('.basket-product');
+                            if (!el) deleteArrange();
+                        }, 300);   
                     });
                 }); 
             }
