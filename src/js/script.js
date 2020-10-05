@@ -38,6 +38,18 @@ function clickLink() {
                 if (getComputedStyle(catalogActive).display === 'block') {
                     const item = catalogActive.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;   //ищем нужную категорию
                     
+                    // function scroll() {
+                    //     setTimeout(() => {
+                    //         let i = catalog.scrollTop;
+                    //         if (i < item) {
+                    //             i++;
+                    //             catalog.scrollTop = i;
+                    //             scroll();
+                    //         }
+                    //     }, 0.5);
+                    // }
+                    // scroll();
+                    
                     catalog.scrollTop = item;
                     deleteActiveLink();
                     link.classList.add('navigation-catagory_active');

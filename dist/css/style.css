@@ -599,6 +599,7 @@ body .scrollBar-line {
   overflow: auto;
   width: 90%;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .catalog__main .catalog__content .catalog__content-radio {

@@ -10,6 +10,7 @@
         overflow: auto;
         width: 90%;
         position: relative;
+        scroll-behavior: smooth;
     
         .catalog__content-radio {
             display: inline-block;
