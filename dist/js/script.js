@@ -15,8 +15,12 @@ function activeScroll() {
         categoryScroll[i] = elem.offsetTop;                                         //на какой высоте находится каждая категория
     });
     catalog.addEventListener('scroll', function() {                                 //срабатывает при пролистывании в каталоге товаров
+        const scrollBar = document.querySelector('.scrollBar-line');
+        const scroll = catalog.scrollTop;
+        scrollBar.style.top = `${scroll}px`;
+        console.log(scroll);
         for (let key in categoryScroll) {                                           //проходится по всему массиву с данными о высоте в категориях
-            if (catalog.scrollTop <= categoryScroll[key] + 100) {                   //catalog.scrollTop - то, на сколько прокручен каталог,
+            if (scroll <= categoryScroll[key] + 100) {                   //catalog.scrollTop - то, на сколько прокручен каталог,
                 deleteActiveLink();                                                 //удаляем активную ссылку
                 linkCategory[key].classList.add("navigation-category_active");      //добавляем активацию
                 return;

@@ -547,11 +547,20 @@ body .scrollBar-line {
 }
 
 .catalog__aside .catalog__aside-category li {
-  list-style-type: disc;
   display: none;
 }
 
+.catalog__aside .catalog__aside-category li .catalog__aside-category_circly {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #506482;
+  border-radius: 50%;
+  margin-right: 0.6em;
+}
+
 .catalog__aside .catalog__aside-category li h4 {
+  display: inline-block;
   margin: 1.45rem 0 0;
 }
 

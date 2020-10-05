@@ -24,10 +24,18 @@
         padding: 0 1.15em 0 2.3em;
 
         li {
-            list-style-type: disc;
             display: none;
 
+            .catalog__aside-category_circly {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: #506482;
+                border-radius: 50%;
+                margin-right: 0.6em;
+            }
             h4 {
+                display: inline-block;
                 margin: 1.45rem 0 0;
             }
             .catalog__aside-category_title {
