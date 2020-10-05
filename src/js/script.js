@@ -18,7 +18,6 @@ function activeScroll() {
         const scrollBar = document.querySelector('.scrollBar-line');
         const scroll = catalog.scrollTop;
         scrollBar.style.top = `${scroll}px`;
-        console.log(scroll);
         for (let key in categoryScroll) {                                           //проходится по всему массиву с данными о высоте в категориях
             if (scroll <= categoryScroll[key] + 100) {                   //catalog.scrollTop - то, на сколько прокручен каталог,
                 deleteActiveLink();                                                 //удаляем активную ссылку
@@ -36,7 +35,7 @@ function clickLink() {
             const category = link.getAttribute('data-category');
 
             activeCategory.forEach( catalogActive => {
-                if (catalogActive.style.display === 'block') {
+                if (getComputedStyle(catalogActive).display === 'block') {
                     const item = catalogActive.querySelector(`.catalog__products-category[data-category="${category}"]`).offsetTop;   //ищем нужную категорию
                     
                     catalog.scrollTop = item;
